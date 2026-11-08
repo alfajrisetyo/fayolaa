@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday, Randhitia Dwi Fayola! 🎂</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <!-- Library untuk efek Confetti (Kembang Api) -->
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.min.js"></script>
+</head>
+<body>
+
+    <div class="main-container">
+        
+        <!-- HEADER & UCAPAN UTAMA -->
+        <header class="card">
+            <div class="morning-icon">🎂</div>
+            <h1>Happy Birthday, Olaa 🎉</h1>
+
+            <!-- TAMPILAN TANGGAL ULANG TAHUN -->
+            <p class="bday-date-badge">🗓️ Spesial Hari Ini: <span id="bdayDateText">1 Januari</span></p>
+            <p id="typingMessage" class="message"></p>
+        </header>
+<!-- TOGGLE COZY / DARK MODE -->
+        <section class="card">
+            <h2>Ubah Suasana Tema 🌙</h2>
+            <button class="action-btn" onclick="toggleCozyMode()">🌙 Toggle Dark Mode</button>
+        </section>
+
+        <!-- FITUR KUE ULANG TAHUN & LILIN TIUP -->
+        <section class="card">
+            <h2>Tiup Lilin Ulang Tahunmu 🕯️</h2>
+            <p>Klik kue di bawah untuk meniup lilinnya!</p>
+            <div id="cakeBox" class="cake-box" onclick="blowCandle()">
+                <span id="candleIcon">🎂🔥</span>
+            </div>
+            <p id="cakeMessage" class="result-text">Lilinnya masih menyala, ayo tiup dan buat permohonan!</p>
+        </section>
+
+        <!-- PEMUTAR MUSIK LATAR -->
+        <section class="card music-card">
+            <h2>Special songs From Botakk🎵</h2>
+            <p id="musicStatus">Musik siap diputar untuk merayakan hari spesialmu ♡</p>
+            <div class="music-controls">
+                <button id="musicBtn" class="action-btn" type="button">▶ Play Musik</button>
+            </div>
+            <div class="volume-control">
+                <label for="musicVolume">🔊 Volume</label>
+                <input type="range" id="musicVolume" min="0" max="1" step="0.01" value="0.5">
+            </div>
+            <audio id="bgMusic" loop preload="metadata">
+                <source src="music.mp3" type="audio/mpeg">
+            </audio>
+        </section>
+
+        <!-- LOVE METER SPESIAL ULANG TAHUN -->
+        <section class="card">
+            <h2>Seberapa Besar Kebahagiaan Hari Ini? 💖</h2>
+            <button class="action-btn" onclick="calculateLove()">Hitung Kebahagiaan ✨</button>
+            <h1 id="loveResult" class="result-text highlight-big">100% 🎂</h1>
+        </section>
+
+        <!-- KOTAK KADO ULANG TAHUN -->
+        <section class="card">
+            <h2>Kado Spesial Untukmu 🎁</h2>
+            <div class="surprise-box" onclick="openSurprise()">
+                <span id="surpriseIcon">🎁</span>
+                <p>Klik untuk buka kado ulang tahunmu!</p>
+            </div>
+            <p id="surpriseMessage" class="result-text"></p>
+        </section>
+
+        <!-- WISH / DOA ULANG TAHUN -->
+        <section class="card">
+            <h2>Ambil Kartu Doa & Harapan ✨</h2>
+            <p>Klik tombol di bawah untuk mengambil pesan kebahagiaan hari ini!</p>
+            <button class="action-btn" onclick="randomWish()">Ambil Kartu Doa 💛</button>
+            <p id="wishResult" class="result-text highlight"></p>
+        </section>
+
+        <!-- KUIS ULANG TAHUN -->
+        <section class="card">
+            <h2>Pertanyaan Spesial Hari Ini 🤔</h2>
+            <p>Siapa yang paling bahagia di hari ulang tahun Olaa?</p>
+            <div class="button-group">
+                <button onclick="answerQuiz('wrong')">Semua orang ( termasuk botakk😉 )</button>
+                <button onclick="answerQuiz('correct')">Tentu saja Olaa sendiri! 🥰</button>
+            </div>
+            <p id="quizResult" class="result-text"></p>
+        </section>
+
+        <!-- KIRIM UCAPAN / HARAPAN PRIBADI -->
+        <section class="card">
+            <h2>Tulis Harapan Ulang Tahunmu 🌟</h2>
+            <input type="text" id="userWishInput" placeholder="Tulis harapanmu di tahun ini..." />
+            <br><br>
+            <button class="action-btn" onclick="saveUserWish()">Simpan Harapan</button>
+            <p id="userWishOutput" class="result-text"></p>
+        </section>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

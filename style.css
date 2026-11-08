@@ -1,0 +1,241 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #ffe6f2, #ffb3d9);
+    color: #4a4a4a;
+    display: flex;
+    justify-content: center;
+    padding: 30px 15px;
+    min-height: 100vh;
+    transition: background 0.4s ease;
+}
+
+.main-container {
+    width: 100%;
+    max-width: 500px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.card {
+    background: white;
+    padding: 25px 20px;
+    border-radius: 20px;
+    box-shadow: 0 8px 20px rgba(255, 105, 180, 0.15);
+    text-align: center;
+    transition: transform 0.3s ease, background 0.4s ease, color 0.4s ease;
+}
+
+.card:hover {
+    transform: translateY(-3px);
+}
+
+.morning-icon {
+    font-size: 45px;
+    margin-bottom: 5px;
+    animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-6px); }
+}
+
+h1 {
+    color: #d81b60;
+    font-size: 1.5rem;
+    margin-bottom: 5px;
+}
+
+/* Style untuk Badge Tanggal Lahir */
+.bday-date-badge {
+    display: inline-block;
+    background: #fff0f5;
+    color: #c2185b;
+    padding: 5px 12px;
+    border-radius: 12px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-bottom: 12px;
+    border: 1px solid #ffb3d9;
+}
+
+h2 {
+    color: #ad1457;
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+}
+
+p {
+    font-size: 0.95rem;
+    color: #666;
+    line-height: 1.5;
+    margin-bottom: 15px;
+}
+
+button {
+    background-color: #ffd1dc;
+    color: #ad1457;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 15px;
+    cursor: pointer;
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin: 4px;
+    transition: 0.3s;
+}
+
+button:hover {
+    background-color: #ff99bb;
+    color: white;
+    transform: scale(1.05);
+}
+
+.action-btn {
+    background-color: #e91e63;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+}
+
+.action-btn:hover {
+    background-color: #c2185b;
+}
+
+.button-group {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.result-text {
+    margin-top: 15px;
+    font-weight: 500;
+    color: #ad1457;
+    min-height: 25px;
+}
+
+.highlight {
+    background: #fff0f5;
+    padding: 10px;
+    border-radius: 10px;
+    border-left: 4px solid #ff69b4;
+}
+
+.highlight-big {
+    font-size: 1.8rem;
+    color: #d81b60;
+    margin-top: 10px;
+}
+
+.cake-box {
+    display: inline-block;
+    background: #fff0f5;
+    padding: 20px 30px;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+    border: 2px dashed #ffb3d9;
+}
+
+.cake-box:hover {
+    transform: scale(1.08);
+    background: #ffe0ed;
+}
+
+.cake-box span {
+    font-size: 50px;
+}
+
+input[type="text"] {
+    width: 80%;
+    padding: 10px 15px;
+    border: 2px solid #ffb3d9;
+    border-radius: 20px;
+    outline: none;
+    font-size: 0.9rem;
+    text-align: center;
+    transition: 0.3s;
+}
+
+input[type="text"]:focus {
+    border-color: #e91e63;
+}
+
+.surprise-box {
+    display: inline-block;
+    background: #ffe0ed;
+    padding: 15px 25px;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.surprise-box:hover {
+    transform: scale(1.08) rotate(-2deg);
+}
+
+.surprise-box span {
+    font-size: 40px;
+}
+
+.volume-control {
+    margin-top: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    font-size: 0.85rem;
+    color: #777;
+}
+
+.volume-control input[type="range"] {
+    accent-color: #e91e63;
+    cursor: pointer;
+}
+
+/* DARK MODE */
+body.cozy-mode {
+    background: linear-gradient(135deg, #1a001a, #330033);
+    color: #ffd1dc;
+}
+
+body.cozy-mode .card {
+    background: #2a1a2a;
+    color: #ffd1dc;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+}
+
+body.cozy-mode h1, body.cozy-mode h2 {
+    color: #ff80bf;
+}
+
+body.cozy-mode p, body.cozy-mode .result-text {
+    color: #ffb3d9;
+}
+
+body.cozy-mode .bday-date-badge {
+    background: #3d1a3d;
+    color: #ff80bf;
+    border-color: #660066;
+}
+
+body.cozy-mode .highlight, body.cozy-mode .cake-box {
+    background: #3d1a3d;
+    border-color: #660066;
+}
+
+body.cozy-mode input[type="text"] {
+    background: #1a001a;
+    color: white;
+    border-color: #660066;
+}
